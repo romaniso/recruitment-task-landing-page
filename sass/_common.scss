@@ -1,0 +1,33 @@
+[class*="__container"] {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: content-box;
+}
+@include media-query(bigger-desktop) {
+  [class*="__container"] {
+    max-width: 970px;
+  }
+}
+@include media-query(small-desktop) {
+  [class*="__container"] {
+    max-width: 750px;
+  }
+}
+@include media-query(phone) {
+  [class*="__container"] {
+    max-width: none;
+  }
+}
+
+[class*="__ibg"] {
+  position: relative;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
