@@ -1,0 +1,47 @@
+.header {
+  &__timer {
+  }
+}
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 48px;
+  row-gap: 10px;
+  padding: 10px 15px;
+  background-color: #000;
+  color: #ffffff;
+  text-transform: uppercase;
+  &__message {
+    font-weight: bold;
+  }
+
+  &__content {
+    .timer__info {
+      &:not(:last-child) {
+        margin-right: 24px;
+        @include media-query(small-desktop) {
+          margin-right: 32px;
+        }
+        @include media-query(phone) {
+          margin-right: 8px;
+        }
+      }
+      strong {
+        //to prevent streching of timer bar
+        display: inline-block;
+        width: 18px;
+        color: $light-orange;
+      }
+      @include media-query(small-phone) {
+        font-size: 10px;
+      }
+    }
+  }
+  @include media-query(small-desktop) {
+    font-size: 12px;
+    text-align: center;
+    flex-direction: column;
+    padding: 12px 15px;
+  }
+}
