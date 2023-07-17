@@ -195,6 +195,9 @@
         font-size: 12px;
         &.open {
           left: 0;
+          .menu__link--accent {
+            text-shadow: 0 0 30px $light-orange;
+          }
         }
       }
       &__item {

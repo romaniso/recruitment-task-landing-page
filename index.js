@@ -7,12 +7,14 @@ $("document").ready(() => {
       !e.target.classList.contains("menu") &&
       !e.target.classList.contains("toggle")
     ) {
-      toggleNavbar();
+      $(".menu").removeClass("open");
+      $("[data-burger]").removeClass("open");
     }
   });
 
   $("[data-burger]").on("click", () => {
-    toggleNavbar();
+    $(".menu").toggleClass("open");
+    $("[data-burger]").toggleClass("open");
   });
 });
 
@@ -36,7 +38,4 @@ function timer(secondsToEnd) {
   }, 1000);
 }
 
-function toggleNavbar() {
-  $(".menu").toggleClass("open");
-  $("[data-burger]").toggleClass("open");
-}
+function toggleNavbar() {}
