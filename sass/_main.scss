@@ -10,9 +10,6 @@
     transform: translateX(-100%);
   }
 }
-
-.page__sales-alert {
-}
 .sales-alert {
   background-color: #000;
   padding: 22px 0;
@@ -55,6 +52,41 @@
 
     &:last-child {
       max-width: 250px;
+    }
+  }
+}
+//HERO---------------------------
+.page__hero {
+  margin: 25px auto 56px auto;
+}
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 26px;
+  row-gap: 16px;
+}
+.hero__banner {
+  flex: 0 1 calc(50% - 26px);
+  @include media-query(tablet) {
+    flex: 0 1 100%;
+  }
+}
+.banner {
+  position: relative;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  &__button {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 192px;
+    max-height: 64px;
+    @include media-query(phone) {
+      width: 142px;
+      height: 50px;
     }
   }
 }
