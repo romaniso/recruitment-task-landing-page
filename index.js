@@ -1,6 +1,19 @@
 $("document").ready(() => {
   //24 hours = 86400 seconds
   timer(86400);
+
+  $("body").on("click", (e) => {
+    if (
+      !e.target.classList.contains("menu") &&
+      !e.target.classList.contains("toggle")
+    ) {
+      toggleNavbar();
+    }
+  });
+
+  $("[data-burger]").on("click", () => {
+    toggleNavbar();
+  });
 });
 
 function timer(secondsToEnd) {
@@ -19,10 +32,11 @@ function timer(secondsToEnd) {
     $("[data-hours]").text(hours);
     $("[data-minutes]").text(minutes);
     $("[data-seconds]").text(seconds);
-    console.log(days);
-    console.log(hours);
-    console.log(minutes);
-    console.log(seconds);
     time--;
   }, 1000);
+}
+
+function toggleNavbar() {
+  $(".menu").toggleClass("open");
+  $("[data-burger]").toggleClass("open");
 }
