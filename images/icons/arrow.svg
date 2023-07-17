@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <g id="ARROW" transform="translate(-896 -501)">
+    <g id="STRZAŁKA_PRAWA" data-name="STRZAŁKA PRAWA" transform="translate(1233 985) rotate(180)">
+      <path id="Path_1304" data-name="Path 1304" d="M0,0H36V36H0Z" transform="translate(301 448)"/>
+      <g id="arrow-point-to-down" transform="translate(321.091 461) rotate(90)">
+        <path id="Path_977" data-name="Path 977" d="M0,101.08H10.182l-5.091,5.091Z" transform="translate(0 -101.08)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

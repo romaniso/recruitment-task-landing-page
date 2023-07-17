@@ -1,6 +1,7 @@
 $("document").ready(() => {
   //24 hours = 86400 seconds
   timer(86400);
+  carousel(6);
 
   $("body").on("click", (e) => {
     if (
@@ -38,4 +39,49 @@ function timer(secondsToEnd) {
   }, 1000);
 }
 
-function toggleNavbar() {}
+function carousel(slidesToShow) {
+  $(".carousel").slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: slidesToShow,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1540,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: false,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 1199.98,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: false,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 767.98,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+  });
+}

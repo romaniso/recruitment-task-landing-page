@@ -90,3 +90,75 @@
     }
   }
 }
+//PRODUCERS-------------------------
+.page__producers {
+}
+.producers {
+  margin-bottom: 64px;
+}
+.producers__container {
+}
+.producers__heading {
+  margin-bottom: 48px;
+  @include media-query(phone) {
+    margin-bottom: 24p;
+  }
+}
+.producers__content {
+}
+.producers__carousel {
+}
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 78px;
+  @include media-query(tablet) {
+    column-gap: 30px;
+  }
+  @include media-query(phone) {
+    column-gap: 10px;
+  }
+  cursor: grab;
+  &__image {
+    width: 150px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .slick-arrow {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    background-image: url("../images/icons/arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    position: static;
+    transform: none;
+    transition: all 0.3s ease 0s;
+    &::before {
+      display: none;
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .slick-prev {
+    transform: rotate(180deg);
+    &:hover {
+      transform: scale(1.1) rotate(180deg);
+    }
+  }
+  .slick-disabled {
+    transition: all 0.2s ease 0s;
+    opacity: 0.2;
+  }
+}
+.carousel__slide {
+  //  display: flex;
+  //  justify-content: center;
+}
