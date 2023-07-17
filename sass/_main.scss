@@ -1,3 +1,60 @@
 .page {
   flex: 1 1 auto;
 }
+//SALES-ALERT----------------------------
+@keyframes scrollText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.page__sales-alert {
+}
+.sales-alert {
+  background-color: #000;
+  padding: 22px 0;
+  @include media-query(tablet) {
+    padding: 14px 15px;
+  }
+}
+.sales-alert__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  animation: scrollText 17s infinite linear;
+  @include media-query(tablet) {
+    animation: none;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.sales-alert__decor {
+  svg {
+    width: 20px;
+    vertical-align: middle;
+  }
+  path {
+    fill: #707070;
+  }
+}
+.sales-alert__message {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  @include media-query(tablet) {
+    white-space: normal;
+    font-size: 14px;
+    letter-spacing: 0.56px;
+
+    &:last-child {
+      max-width: 250px;
+    }
+  }
+}
