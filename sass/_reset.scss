@@ -29,6 +29,16 @@ h6 {
   font-weight: inherit;
   font-size: inherit;
 }
+mark,
+em,
+strong {
+  font-weight: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  background: inherit;
+  color: inherit;
+}
 address {
   font-style: normal;
 }
