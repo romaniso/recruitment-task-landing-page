@@ -91,22 +91,14 @@
   }
 }
 //PRODUCERS-------------------------
-.page__producers {
-}
 .producers {
   margin-bottom: 64px;
-}
-.producers__container {
 }
 .producers__heading {
   margin-bottom: 48px;
   @include media-query(phone) {
     margin-bottom: 24p;
   }
-}
-.producers__content {
-}
-.producers__carousel {
 }
 .carousel {
   display: flex;
@@ -120,9 +112,16 @@
     column-gap: 10px;
   }
   cursor: grab;
+  &__slide {
+    transition: all 0.3s ease 0s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
   &__image {
     width: 150px;
     margin: 0 auto;
+
     img {
       width: 100%;
       object-fit: cover;
@@ -158,7 +157,130 @@
     opacity: 0.2;
   }
 }
-.carousel__slide {
-  //  display: flex;
-  //  justify-content: center;
+//MAIN_BANNER-----------------------------
+.page__main-banner {
+  margin-bottom: 56px;
+  @include media-query(phone) {
+    margin-bottom: 40px;
+  }
+}
+.main-banner {
+  @include media-query(phone) {
+    height: 320px;
+  }
+}
+.main-banner__content {
+  position: relative;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.main-banner__text {
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: 500;
+  top: 32%;
+  right: 17%;
+  font-size: 95.04px;
+  line-height: 1;
+  letter-spacing: 17.28px;
+  white-space: nowrap;
+  background-color: #e9eaec6b;
+
+  @include media-query(large-desktop) {
+    transform: scale(0.8);
+    top: 20%;
+    right: 13%;
+  }
+  @include media-query(bigger-desktop) {
+    transform: scale(0.65);
+    top: 16%;
+    right: 10%;
+  }
+  @include media-query(desktop) {
+    top: 10%;
+    right: 8%;
+  }
+  @include media-query(small-desktop) {
+    transform: scale(0.5);
+    top: 4%;
+    right: 2%;
+  }
+  @include media-query(tablet) {
+    transform: scale(0.47);
+    top: 5%;
+    right: -15%;
+  }
+  @media (max-width: 580px) {
+    transform: scale(0.4);
+    top: 4%;
+    right: -25%;
+  }
+  @include media-query(phone) {
+    transform: scale(0.3);
+    top: -1%;
+    right: -35%;
+  }
+  @include media-query(small-phone) {
+    transform: scale(0.25);
+    top: -23%;
+    right: -55%;
+  }
+}
+.text--vertical {
+  writing-mode: vertical-rl;
+  position: absolute;
+  transform: rotate(180deg);
+  font-weight: 500;
+  top: 7%;
+  left: -10%;
+  font-size: 46.08px;
+  letter-spacing: 1.44px;
+  background-color: #e9eaec6b;
+}
+.text--accent {
+  color: $brown-text;
+  font-weight: 600;
+
+  &:nth-of-type(1) {
+    letter-spacing: 5.76px;
+    font-size: 132.48px;
+  }
+  &:nth-of-type(2) {
+    position: absolute;
+    font-weight: 700;
+    font-size: 51.84px;
+    letter-spacing: 63.84px;
+    left: 2%;
+    background-color: #e9eaec6b;
+  }
+}
+.main-banner__button {
+  position: absolute;
+  bottom: 15%;
+  right: 25%;
+  min-width: 290px;
+  @include media-query(small-desktop) {
+    font-size: 14px;
+    min-width: 230px;
+    padding: 18px 30px;
+    right: 38%;
+    transform: translateX(50%);
+  }
+  @include media-query(tablet) {
+    font-size: 16px;
+    min-width: 260px;
+    padding: 20px 32px;
+    right: 33%;
+    transform: translateX(50%);
+  }
+  @include media-query(phone) {
+    min-width: 226px;
+    font-size: 14px;
+    min-width: 230px;
+    padding: 18px 30px;
+    right: 50%;
+    transform: translateX(50%);
+  }
 }
