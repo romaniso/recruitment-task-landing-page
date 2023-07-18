@@ -55,4 +55,4 @@ yarn run build
 
 ---
 
-<!--[Check it online on github pages](/)-->
+[Check it online on github pages](https://romaniso.github.io/recruitment-task-landing-page/)
