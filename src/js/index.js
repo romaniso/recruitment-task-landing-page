@@ -1,3 +1,5 @@
+import "../sass/style.scss";
+
 $("document").ready(() => {
   //24 hours = 86400 seconds
   timer(86400);

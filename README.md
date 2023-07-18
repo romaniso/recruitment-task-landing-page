@@ -1,17 +1,41 @@
 # Recruitment task Landing Page
 
-e-commerce landing page based on vanilla JS (JQuery library) and SCSS preprocessor.
+e-commerce landing page based on vanilla JS (JQuery library), SCSS preprocessor, and Webpack with Babel for bundling the final project.
 
 ## Used technologies
 
 - HTML
 - SCSS
 - JavaScript (JQuery)
+- Webpack
+- Babel
 
 ## Libraries
 
 - JQuery (cdn)
 - Slick Slider (cdn)
+
+## Instalation
+
+- Development env:
+
+```
+// for npm:
+npm run dev
+
+// for yarn
+yarn run dev
+```
+
+- To generate production package:
+
+```
+// for npm:
+npm run build
+
+// for yarn
+yarn run build
+```
 
 ## Tasks to complete
 
