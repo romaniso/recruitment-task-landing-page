@@ -9,7 +9,7 @@ module.exports = {
   output: {
     // assetModuleFilename: "images/[hash][ext][query]",
     filename: "bundle[contenthash].js",
-    path: path.resolve(__dirname, "./build"),
+    path: path.resolve(__dirname, "./docs"),
     publicPath: "",
   },
   mode: "production",

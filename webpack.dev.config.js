@@ -7,7 +7,7 @@ module.exports = {
   entry: "./src/js/index.js",
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "./build"),
+    path: path.resolve(__dirname, "./docs"),
     publicPath: "",
   },
   mode: "development",
@@ -16,7 +16,7 @@ module.exports = {
     open: true,
     hot: true,
     static: {
-      directory: path.resolve(__dirname, "./build"),
+      directory: path.resolve(__dirname, "./docs"),
     },
     devMiddleware: {
       index: "index.html",
