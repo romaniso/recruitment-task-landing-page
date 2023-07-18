@@ -1,22 +1,10 @@
 $("document").ready(() => {
   //24 hours = 86400 seconds
   timer(86400);
-  carousel(6);
-
-  $("body").on("click", (e) => {
-    if (
-      !e.target.classList.contains("menu") &&
-      !e.target.classList.contains("toggle")
-    ) {
-      $(".menu").removeClass("open");
-      $("[data-burger]").removeClass("open");
-    }
-  });
-
-  $("[data-burger]").on("click", () => {
-    $(".menu").toggleClass("open");
-    $("[data-burger]").toggleClass("open");
-  });
+  carousel(6, "[data-carousel-producers]", false);
+  carousel(5, "[data-carousel-sales]", true);
+  favoriteHandler();
+  burgerHandler();
 });
 
 function timer(secondsToEnd) {
@@ -39,10 +27,10 @@ function timer(secondsToEnd) {
   }, 1000);
 }
 
-function carousel(slidesToShow) {
-  $(".carousel").slick({
+function carousel(slidesToShow, domEl, infinite) {
+  $(domEl).slick({
     dots: false,
-    infinite: false,
+    infinite: infinite,
     speed: 300,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
@@ -52,7 +40,7 @@ function carousel(slidesToShow) {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4,
-          infinite: false,
+          infinite: infinite,
           dots: false,
         },
       },
@@ -61,7 +49,7 @@ function carousel(slidesToShow) {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: false,
+          infinite: infinite,
           dots: false,
         },
       },
@@ -79,9 +67,29 @@ function carousel(slidesToShow) {
           slidesToScroll: 1,
         },
       },
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ],
+  });
+}
+
+function favoriteHandler() {
+  $("[data-favorite]").on("click", function () {
+    $(this).toggleClass("clicked");
+  });
+}
+
+function burgerHandler() {
+  $("body").on("click", (e) => {
+    if (
+      !e.target.classList.contains("menu") &&
+      !e.target.classList.contains("toggle")
+    ) {
+      $(".menu").removeClass("open");
+      $("[data-burger]").removeClass("open");
+    }
+  });
+
+  $("[data-burger]").on("click", () => {
+    $(".menu").toggleClass("open");
+    $("[data-burger]").toggleClass("open");
   });
 }
