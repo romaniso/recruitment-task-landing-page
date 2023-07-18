@@ -159,6 +159,7 @@
             display: block;
             z-index: 100;
             &.open {
+              position: fixed;
               filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg)
                 brightness(103%) contrast(103%);
             }
