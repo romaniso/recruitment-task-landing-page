@@ -1,7 +1,7 @@
 $("document").ready(() => {
   //24 hours = 86400 seconds
   timer(86400);
-  carousel(6, "[data-carousel-producers]", false);
+  carousel(6, "[data-carousel-producers]", false, true);
   carousel(5, "[data-carousel-sales]", true);
   favoriteHandler();
   burgerHandler();
@@ -28,8 +28,10 @@ function timer(secondsToEnd) {
   }, 1000);
 }
 
-function carousel(slidesToShow, domEl, infinite) {
+function carousel(slidesToShow, domEl, infinite, autoplay) {
   $(domEl).slick({
+    autoplay: autoplay,
+    autoplaySpeed: 2000,
     dots: false,
     infinite: infinite,
     speed: 300,
@@ -103,14 +105,10 @@ function validateForm() {
       let email = $("#email").val();
       const pattern = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
       if (!pattern.test(email)) {
-        $("#email").addClass("invalid");
         $("[data-popup-email]")
           .text("Niepoprawnie wpowadzony e-mail")
           .removeClass("hidden");
-        setTimeout(() => {
-          $("#email").removeClass("invalid");
-          $("[data-popup-email]").addClass("hidden");
-        }, 4000);
+        $("#email").addClass("invalid");
       }
     })();
     (function validateNumber() {
@@ -124,12 +122,14 @@ function validateForm() {
             .text("Niepoprawnie wpowadzony numer telefonu")
             .removeClass("hidden");
           $("#tel").addClass("invalid");
-          setTimeout(() => {
-            $("#tel").removeClass("invalid");
-            $("[data-popup-tel]").addClass("hidden");
-          }, 4000);
         }
       }
     })();
+    setTimeout(() => {
+      $("#email").removeClass("invalid");
+      $("[data-popup-email]").addClass("hidden");
+      $("#tel").removeClass("invalid");
+      $("[data-popup-tel]").addClass("hidden");
+    }, 4000);
   });
 }
