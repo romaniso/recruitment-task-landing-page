@@ -1,7 +1,7 @@
 $("document").ready(() => {
   //24 hours = 86400 seconds
   timer(86400);
-  carousel(6, "[data-carousel-producers]", false, true);
+  carousel(6, "[data-carousel-producers]", true, true);
   carousel(5, "[data-carousel-sales]", true);
   favoriteHandler();
   burgerHandler();

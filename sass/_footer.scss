@@ -18,6 +18,7 @@
     &__container {
       @include media-query(tablet) {
         width: 100%;
+        padding: 0;
       }
     }
 
