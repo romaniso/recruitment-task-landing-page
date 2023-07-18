@@ -5,6 +5,7 @@ $("document").ready(() => {
   carousel(5, "[data-carousel-sales]", true);
   favoriteHandler();
   burgerHandler();
+  validateForm();
 });
 
 function timer(secondsToEnd) {
@@ -91,5 +92,44 @@ function burgerHandler() {
   $("[data-burger]").on("click", () => {
     $(".menu").toggleClass("open");
     $("[data-burger]").toggleClass("open");
+  });
+}
+
+function validateForm() {
+  $("[data-form-newsletter]").submit((e) => {
+    e.preventDefault();
+
+    (function validateName() {
+      let email = $("#email").val();
+      const pattern = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+      if (!pattern.test(email)) {
+        $("#email").addClass("invalid");
+        $("[data-popup-email]")
+          .text("Niepoprawnie wpowadzony e-mail")
+          .removeClass("hidden");
+        setTimeout(() => {
+          $("#email").removeClass("invalid");
+          $("[data-popup-email]").addClass("hidden");
+        }, 4000);
+      }
+    })();
+    (function validateNumber() {
+      let number = $("#tel").val();
+      if (!number.length || number.length < 9 || number.length > 14) {
+        const pattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+        if (!number.match(pattern)) {
+          $("#email").addClass("invalid");
+          $("[data-popup-tel]")
+            .text("Niepoprawnie wpowadzony numer telefonu")
+            .removeClass("hidden");
+          $("#tel").addClass("invalid");
+          setTimeout(() => {
+            $("#tel").removeClass("invalid");
+            $("[data-popup-tel]").addClass("hidden");
+          }, 4000);
+        }
+      }
+    })();
   });
 }

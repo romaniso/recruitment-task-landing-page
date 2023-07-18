@@ -666,7 +666,48 @@
           </main>
         </section>
       </main>
-      <footer class="footer">FOOTER</footer>
+      <footer class="footer">
+        <section class="footer__newsletter newsletter newsletter__container">
+          <div class="newsletter__wrapper">
+            <header class="newsletter__heading">
+              <h3>NEWSLETTER</h3>
+              <p>
+                Dołącz do newslettera i bądź na bieżąco ze wszystkimi
+                <strong>PROMOCJAMI&nbsp;I&nbsp;NOWOŚCIAMI</strong>
+              </p>
+            </header>
+            <main class="newsletter__body">
+              <form
+                class="newsletter__form from"
+                data-form-newsletter
+                novalidate
+              >
+                <p class="validation-info" data-popup-email></p>
+                <input
+                  class="form__input"
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Twój e-mail"
+                />
+                <p class="validation-info" data-popup-tel></p>
+                <input
+                  class="form__input"
+                  type="tel"
+                  name="tel"
+                  id="tel"
+                  minlength="9"
+                  maxlength="14"
+                  placeholder="Telefon"
+                />
+                <button class="form__button buttton" type="submit">
+                  Dołącz teraz
+                </button>
+              </form>
+            </main>
+          </div>
+        </section>
+      </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script
